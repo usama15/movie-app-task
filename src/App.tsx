@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import MoviesViewSection from './Components/MoviesViewSection/MoviesViewSection';
+import Header from './Components/Header/Header';
 
 function App() {
+  const [inputValue, setInputValue] = useState<string>('');
+  const inputValueChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header inputValueChanged={(e: React.ChangeEvent<HTMLInputElement>) => inputValueChanged(e)} />
+      <MoviesViewSection movieKeyWord={inputValue} />
+    </>
   );
 }
 

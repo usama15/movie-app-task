@@ -1,0 +1,20 @@
+.container{
+    display: inline;
+    margin-left: 10px;
+}
+
+.main{
+    display: inline-table;
+    flex-direction: row;
+    width: 100px;
+    height: 200px;
+    padding: 20px;
+    text-align: center;
+}
+
+.poster{
+    width: auto;
+    height: 200px;
+    border-radius: 8px;
+}
+
